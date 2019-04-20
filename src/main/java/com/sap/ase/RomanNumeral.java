@@ -1,21 +1,34 @@
 package com.sap.ase;
 
 public class RomanNumeral {
-    private int value;
 
     public static RomanNumeral valueOf(int value) {
-        return new RomanNumeral(value);
+        for (RomanDigit digit : RomanDigit.values()) {
+            if (digit.value == value) {
+                return new RomanNumeral(digit);
+            }
+        }
+        return null;
     }
 
-    public RomanNumeral(int value) {
-        this.value = value;
+    private RomanDigit digit;
+
+    public RomanNumeral(RomanDigit value) {
+        this.digit = value;
     }
 
     @Override
     public String toString() {
-        if (value == 5) {
-            return "V";
+        return digit.name();
+    }
+
+    enum RomanDigit {
+        I(1), V(5);
+
+        private int value;
+
+        RomanDigit(int value) {
+            this.value = value;
         }
-        return "I";
     }
 }
