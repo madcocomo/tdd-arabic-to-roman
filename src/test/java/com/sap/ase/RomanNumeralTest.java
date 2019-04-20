@@ -7,15 +7,18 @@ import org.junit.Test;
 
 public class RomanNumeralTest {
 
+    private void assertArabicToRoman(int arabic, String roman) {
+        RomanNumeral romanNumeral = RomanNumeral.valueOf(arabic);
+        assertThat(romanNumeral.toString(), is(roman));
+    }
+
 	@Test
 	public void _1_is_I() {
-	   RomanNumeral roman = RomanNumeral.valueOf(1);
-	   assertThat(roman.toString(), is("I"));
-	}
+        assertArabicToRoman(1, "I");
+    }
 
     @Test
     public void _5_is_V() {
-        RomanNumeral roman = RomanNumeral.valueOf(5);
-        assertThat(roman.toString(), is("V"));
+        assertArabicToRoman(5, "V");
     }
 }
