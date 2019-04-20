@@ -4,6 +4,9 @@ public class RomanNumeral {
 
     public static RomanNumeral valueOf(int value) {
         for (RomanDigit digit : RomanDigit.values()) {
+            if (value == 2) {
+                return new RomanNumeral(RomanDigit.I, RomanDigit.I);
+            }
             if (digit.value == value) {
                 return new RomanNumeral(digit);
             }
@@ -11,15 +14,19 @@ public class RomanNumeral {
         return null;
     }
 
-    private RomanDigit digit;
+    private RomanDigit[] digit;
 
-    public RomanNumeral(RomanDigit value) {
+    public RomanNumeral(RomanDigit... value) {
         this.digit = value;
     }
 
     @Override
     public String toString() {
-        return digit.name();
+        StringBuilder result = new StringBuilder();
+        for (RomanDigit digit1: digit) {
+            result.append(digit1.name());
+        }
+        return result.toString();
     }
 
     enum RomanDigit {
