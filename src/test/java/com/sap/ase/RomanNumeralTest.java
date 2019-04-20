@@ -17,6 +17,10 @@ public class RomanNumeralTest {
         assertArabicToRoman(1, "I");
         assertArabicToRoman(5, "V");
         assertArabicToRoman(10, "X");
+        assertArabicToRoman(50, "L");
+        assertArabicToRoman(100, "C");
+        assertArabicToRoman(500, "D");
+        assertArabicToRoman(1000, "M");
     }
 
 }
