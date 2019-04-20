@@ -29,7 +29,12 @@ public class RomanNumeralTest {
     }
 
     @Test
-    public void _4_is_IV() {
+    public void test_4x_and_9x() {
         assertArabicToRoman(4, "IV");
+        assertArabicToRoman(9, "IX");
+        assertArabicToRoman(40, "XL");
+        assertArabicToRoman(90, "XC");
+        assertArabicToRoman(400, "CD");
+        assertArabicToRoman(900, "CM");
     }
 }
