@@ -40,4 +40,8 @@ public class RomanNumeralTest {
         assertArabicToRoman(900, "CM");
     }
 
+    @Test
+    public void acceptance_test() {
+        assertArabicToRoman(3749, "MMMDCCXLIX");
+    }
 }
