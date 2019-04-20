@@ -13,12 +13,10 @@ public class RomanNumeralTest {
     }
 
 	@Test
-	public void _1_is_I() {
+	public void test_single_digit() {
         assertArabicToRoman(1, "I");
+        assertArabicToRoman(5, "V");
+        assertArabicToRoman(10, "X");
     }
 
-    @Test
-    public void _5_is_V() {
-        assertArabicToRoman(5, "V");
-    }
 }
