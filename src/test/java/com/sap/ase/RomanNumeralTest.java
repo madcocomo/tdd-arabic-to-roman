@@ -23,4 +23,8 @@ public class RomanNumeralTest {
         assertArabicToRoman(1000, "M");
     }
 
+    @Test
+    public void test_multiple_digits() {
+        assertArabicToRoman(2, "II");
+    }
 }
