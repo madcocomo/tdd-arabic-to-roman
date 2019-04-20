@@ -23,7 +23,7 @@ public class RomanNumeral {
     }
 
     enum RomanDigit {
-        I(1), V(5);
+        I(1), V(5), X(10);
 
         private int value;
 
