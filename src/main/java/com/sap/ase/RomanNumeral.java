@@ -11,28 +11,24 @@ public class RomanNumeral {
         List<RomanDigit> digits = new ArrayList<>();
         while (value > 0) {
             for (RomanDigit digit : RomanDigit.values()) {
-                if (value > digit.value) {
-                    digits.add(digit);
-                    value -= digit.value;
-                }
-                if (value == digit.value) {
+                if (value >= digit.value) {
                     digits.add(digit);
                     value -= digit.value;
                 }
             }
         }
-        return new RomanNumeral(digits.toArray(new RomanDigit[0]));
+        return new RomanNumeral(digits);
     }
 
-    private RomanDigit[] digits;
+    private List<RomanDigit> digits;
 
-    public RomanNumeral(RomanDigit... digits) {
+    public RomanNumeral(List<RomanDigit> digits) {
         this.digits = digits;
     }
 
     @Override
     public String toString() {
-        return Stream.of(digits)
+        return digits.stream()
                 .map(RomanDigit::name)
                 .collect(Collectors.joining());
     }

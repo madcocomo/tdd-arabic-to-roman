@@ -27,4 +27,9 @@ public class RomanNumeralTest {
     public void test_multiple_digits() {
         assertArabicToRoman(2, "II");
     }
+
+    @Test
+    public void _4_is_IV() {
+        assertArabicToRoman(4, "IV");
+    }
 }
