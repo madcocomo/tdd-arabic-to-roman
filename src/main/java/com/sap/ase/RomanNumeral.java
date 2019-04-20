@@ -1,5 +1,8 @@
 package com.sap.ase;
 
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class RomanNumeral {
 
     public static RomanNumeral valueOf(int value) {
@@ -14,19 +17,17 @@ public class RomanNumeral {
         return null;
     }
 
-    private RomanDigit[] digit;
+    private RomanDigit[] digits;
 
     public RomanNumeral(RomanDigit... value) {
-        this.digit = value;
+        this.digits = value;
     }
 
     @Override
     public String toString() {
-        StringBuilder result = new StringBuilder();
-        for (RomanDigit digit1: digit) {
-            result.append(digit1.name());
-        }
-        return result.toString();
+        return Stream.of(digits)
+                .map(RomanDigit::name)
+                .collect(Collectors.joining());
     }
 
     enum RomanDigit {
