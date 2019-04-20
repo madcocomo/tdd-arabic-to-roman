@@ -26,6 +26,8 @@ public class RomanNumeralTest {
     @Test
     public void test_multiple_digits() {
         assertArabicToRoman(2, "II");
+        assertArabicToRoman(8, "VIII");
+        assertArabicToRoman(200, "CC");
     }
 
     @Test
@@ -37,4 +39,5 @@ public class RomanNumeralTest {
         assertArabicToRoman(400, "CD");
         assertArabicToRoman(900, "CM");
     }
+
 }

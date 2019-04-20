@@ -3,7 +3,6 @@ package com.sap.ase;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class RomanNumeral {
 
@@ -14,6 +13,7 @@ public class RomanNumeral {
                 if (value >= digit.value) {
                     digits.add(digit);
                     value -= digit.value;
+                    break;
                 }
             }
         }
